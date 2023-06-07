@@ -1,25 +1,58 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+// import logo from './logo.svg';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import './App.css';
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <IndexPage />,
+  },
+  {
+    path: "/about",
+    element: <AboutPage />,
+  },
+  {
+    path: "/blog",
+    element: <BlogPage />,
+  },
+]);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <RouterProvider router={router} />
+    </React.Fragment>
   );
 }
 
 export default App;
+
+
+function IndexPage() {
+  return (
+    <h1 className="text-3xl font-bold underline">
+      This is the index page
+    </h1>
+  )
+}
+
+function AboutPage() {
+  return (
+    <h1 className="text-3xl font-bold underline">
+      This is the about page
+    </h1>
+  )  
+}
+
+function BlogPage() {
+  return (
+    <h1 className="text-3xl font-bold underline">
+      This is the blog page
+    </h1>
+  )
+}
