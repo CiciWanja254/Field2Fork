@@ -3,7 +3,12 @@ import React, { useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import ProductCard from "./components/ProductCard";
-
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Newsletter from "./components/Newsletter";
+import Testimonial from "./components/Testimonial";
+import Promo from "./components/Promo";
+import About from "./components/About";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -43,7 +48,14 @@ export default App;
 
 function IndexPage() {
   return (
-    <h1 className="text-3xl font-bold underline">This is the index page</h1>
+    <div>
+      <Header />
+      <Promo />
+      <About />
+      <Newsletter />
+      <Testimonial />
+      <Footer />
+    </div>
   );
 }
 
