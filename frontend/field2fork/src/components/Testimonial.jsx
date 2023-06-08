@@ -5,7 +5,7 @@ export default function Testimonial() {
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20" />
           <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
           <div className="mx-auto max-w-2xl lg:max-w-4xl">
-            <img className="mx-auto h-12" src="https://tailwindui.com/img/logos/workcation-logo-indigo-600.svg" alt="" />
+            <img className="mx-auto h-12" src="https://i.pinimg.com/564x/7e/5b/bc/7e5bbcd6495bb6beac328abfd0242602.jpg" alt="" />
             <figure className="mt-10">
               <blockquote className="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
                 <p>
@@ -15,7 +15,7 @@ export default function Testimonial() {
               <figcaption className="mt-10">
                 <img
                   className="mx-auto h-10 w-10 rounded-full"
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  src="https://i.pinimg.com/564x/d4/15/1f/d4151f9385db87207ab017870983d8ef.jpg"
                   alt=""
                 />
                 <div className="mt-4 flex items-center justify-center space-x-3 text-base">
@@ -32,7 +32,7 @@ export default function Testimonial() {
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20" />
           <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
           <div className="mx-auto max-w-2xl lg:max-w-4xl">
-            <img className="mx-auto h-12" src="https://tailwindui.com/img/logos/workcation-logo-indigo-600.svg" alt="" />
+            <img className="mx-auto h-12" src="https://i.pinimg.com/564x/fa/65/2c/fa652c503dbd7260f2b457f6f7e3da65.jpg" alt="" />
             <figure className="mt-10">
               <blockquote className="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
                 <p>
@@ -59,7 +59,7 @@ export default function Testimonial() {
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20" />
           <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
           <div className="mx-auto max-w-2xl lg:max-w-4xl">
-            <img className="mx-auto h-12" src="https://tailwindui.com/img/logos/workcation-logo-indigo-600.svg" alt="" />
+            <img className="mx-auto h-12" src="https://i.pinimg.com/564x/21/2d/54/212d548ef12141e8bc5738f65e94c77e.jpg" alt="" />
             <figure className="mt-10">
               <blockquote className="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
                 <p>
@@ -69,7 +69,7 @@ export default function Testimonial() {
               <figcaption className="mt-10">
                 <img
                   className="mx-auto h-10 w-10 rounded-full"
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  src="https://i.pinimg.com/564x/69/3e/21/693e2173f4c3c44ed6af4fd5a0a4b537.jpg"
                   alt=""
                 />
                 <div className="mt-4 flex items-center justify-center space-x-3 text-base">
