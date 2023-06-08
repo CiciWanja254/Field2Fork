@@ -1,6 +1,6 @@
-require_relative '../models/consumer'
+require_relative '../models/consumers'
 
-class ConsumersController < Sinatra::Base
+class ConsumerController < Sinatra::Base
   get '/consumers' do
     consumers = Consumer.all
     consumers.map { |consumer| consumer.to_json }.to_json

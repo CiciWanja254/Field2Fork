@@ -1,6 +1,6 @@
-require_relative '../models/message'
+require_relative '../models/messages'
 
-class MessagesController < Sinatra::Base
+class MessageController < Sinatra::Base
   get '/messages' do
     messages = Message.all
     messages.map { |message| message.to_json }.to_json

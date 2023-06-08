@@ -3,6 +3,7 @@ class CreateFarmers < ActiveRecord::Migration[7.0]
     create_table :farmers do |t|
       t.string :farm_name, null: false
       t.references :user, null: false, foreign_key: true
+      t.string :phone_no, null: false
       t.text :address, null: false
 
       t.timestamps null: false
