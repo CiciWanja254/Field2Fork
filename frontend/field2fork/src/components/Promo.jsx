@@ -5,16 +5,14 @@ export default function Promo() {
           <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
             <div className="sm:max-w-lg">
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                Summer styles are finally here
+              Discover Farm-Fresh Delights
               </h1>
               <p className="mt-4 text-xl text-gray-500">
-                This year, our new summer collection will shelter you from the harsh elements of a world that doesn't care
-                if you live or die.
+              Delight in the abundance of farm-fresh treasures waiting to be savored. Immerse yourself in the flavors of nature, sourced directly from local farmers. Uncover a world of culinary delights that will ignite your palate and nourish your soul.
               </p>
             </div>
             <div>
               <div className="mt-10">
-                {/* Decorative image grid */}
                 <div
                   aria-hidden="true"
                   className="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl"
@@ -84,7 +82,7 @@ export default function Promo() {
                   href="#"
                   className="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
                 >
-                  Shop Collection
+                  Shop 
                 </a>
               </div>
             </div>

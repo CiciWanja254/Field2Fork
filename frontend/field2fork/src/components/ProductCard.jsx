@@ -6,7 +6,7 @@ function ProductCard() {
       <a href="#">
         <img
           className="p-8 rounded-t-lg"
-          src="/docs/images/products/apple-watch.png"
+          src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg"
           alt="product image"
         />
       </a>
