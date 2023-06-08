@@ -7,16 +7,16 @@ import Newsletter from "../components/Newsletter";
 import Testimonial from "../components/Testimonial";
 
 function IndexPage() {
-    return (
-      <div>
-        <Header />
-        <Promo />
-        <About />
-        <Newsletter />
-        <Testimonial />
-        <Footer />
-      </div>
-    );
+  return (
+    <div>
+      <Header />
+      <Promo />
+      <About />
+      <Newsletter />
+      <Testimonial />
+      <Footer />
+    </div>
+  );
 }
 
 export default IndexPage;
