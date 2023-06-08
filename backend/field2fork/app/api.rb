@@ -13,7 +13,15 @@ class Field2fork < Sinatra::Base
     # Add use statements for controllers
     # Example:
     # use ControllerName
-    use CartController
+    use CartsController
+    use ConsumersController
+    use farmersController
+    use messagesController
+    use ordersController
+    use productsController
+    use reviewsController
+    use usersController
+    use wholesalersController
 
     get '/' do
         { message: 'Hello, World!' }.to_json
