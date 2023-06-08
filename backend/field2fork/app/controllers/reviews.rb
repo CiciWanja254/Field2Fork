@@ -1,6 +1,6 @@
-require_relative '../models/review'
+require_relative '../models/reviews'
 
-class ReviewsController < Sinatra::Base
+class ReviewController < Sinatra::Base
   get '/reviews' do
     reviews = Review.all
     reviews.map { |review| review.to_json }.to_json

@@ -1,6 +1,6 @@
-require_relative '../models/farmer'
+require_relative '../models/farmers'
 
-class FarmersController < Sinatra::Base
+class FarmerController < Sinatra::Base
   get '/farmers' do
     farmers = Farmer.all
     farmers.map { |farmer| farmer.to_json }.to_json

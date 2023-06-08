@@ -1,6 +1,6 @@
-require_relative '../models/wholesaler'
+require_relative '../models/wholesalers'
 
-class WholesalersController < Sinatra::Base
+class WholesalerController < Sinatra::Base
   get '/wholesalers' do
     wholesalers = Wholesaler.all
     wholesalers.map { |wholesaler| wholesaler.to_json }.to_json

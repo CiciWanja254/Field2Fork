@@ -1,6 +1,6 @@
-require_relative '../models/user'
+require_relative '../models/users'
 
-class UsersController < Sinatra::Base
+class UserController < Sinatra::Base
   get '/users' do
     users = User.all
     users.map { |user| user.to_json }.to_json

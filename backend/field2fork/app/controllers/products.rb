@@ -1,6 +1,6 @@
-require_relative '../models/product'
+require_relative '../models/products'
 
-class ProductsController < Sinatra::Base
+class ProductController < Sinatra::Base
   get '/products' do
     products = Product.all
     products.map { |product| product.to_json }.to_json

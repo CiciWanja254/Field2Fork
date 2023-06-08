@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_07_140723) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_08_172722) do
   create_table "carts", force: :cascade do |t|
     t.integer "consumer_id"
     t.integer "product_id"
@@ -21,9 +21,26 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_140723) do
     t.index ["product_id"], name: "index_carts_on_product_id"
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "consumers", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "phone_number", null: false
+    t.text "address", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_consumers_on_user_id"
+  end
+
   create_table "farmers", force: :cascade do |t|
     t.string "farm_name", null: false
     t.integer "user_id", null: false
+    t.string "phone_no", null: false
     t.text "address", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -31,10 +48,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_140723) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.string "sender_type"
-    t.integer "sender_id"
-    t.string "receiver_type"
-    t.integer "receiver_id"
+    t.string "sender_type", null: false
+    t.integer "sender_id", null: false
+    t.string "receiver_type", null: false
+    t.integer "receiver_id", null: false
     t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -54,15 +71,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_140723) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.integer "seller_id"
+    t.string "seller_type", null: false
+    t.integer "seller_id", null: false
     t.string "name", null: false
     t.text "description"
     t.decimal "price", precision: 10, scale: 2, null: false
-    t.integer "stock_level", default: 0
     t.text "image"
+    t.text "availability", default: "0", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["seller_id"], name: "index_products_on_seller_id"
+    t.index ["seller_type", "seller_id"], name: "index_products_on_seller"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -89,7 +107,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_140723) do
   create_table "wholesalers", force: :cascade do |t|
     t.string "company_name", null: false
     t.integer "user_id", null: false
-    t.string "phone_number", null: false
+    t.string "phone_no", null: false
     t.text "address", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -98,9 +116,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_140723) do
 
   add_foreign_key "carts", "consumers"
   add_foreign_key "carts", "products"
+  add_foreign_key "consumers", "users"
   add_foreign_key "farmers", "users"
   add_foreign_key "orders", "consumers"
   add_foreign_key "orders", "products"
-  add_foreign_key "products", "farmers", column: "seller_id"
   add_foreign_key "wholesalers", "users"
 end

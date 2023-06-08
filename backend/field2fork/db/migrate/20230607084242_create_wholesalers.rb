@@ -1,14 +1,13 @@
-class CreateProducts < ActiveRecord::Migration[7.0]
+class CreateWholesalers < ActiveRecord::Migration[7.0]
   def change
-    create_table :products do |t|
-      t.references :seller, polymorphic: true, null: false
-      t.string :name, null: false
-      t.text :description
-      t.decimal :price, precision: 10, scale: 2, null: false
-      t.integer :stock_level, default: 0
-      t.text :image
+    create_table :wholesalers do |t|
+      t.string :company_name, null: false
+      t.references :user, null: false, foreign_key: true
+      t.string :phone_no, null: false
+      t.text :address, null: false
 
       t.timestamps null: false
     end
   end
 end
+

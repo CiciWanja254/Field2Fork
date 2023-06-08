@@ -1,4 +1,4 @@
 class Product < ActiveRecord::Base
-    belongs_to :seller, class_name: 'Farmer'
+    belongs_to :seller, polymorphic: true
     has_many :carts
 end

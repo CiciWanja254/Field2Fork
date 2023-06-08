@@ -1,6 +1,6 @@
-require_relative '../models/order'
+require_relative '../models/orders'
 
-class OrdersController < Sinatra::Base
+class OrderController < Sinatra::Base
   get '/orders' do
     orders = Order.all
     orders.map { |order| order.to_json }.to_json

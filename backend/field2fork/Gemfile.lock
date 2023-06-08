@@ -25,6 +25,8 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
     rack (2.2.7)
+    rack-cors (2.0.1)
+      rack (>= 2.0.0)
     rack-protection (3.0.6)
       rack
     rake (13.0.6)
@@ -37,6 +39,7 @@ GEM
     sinatra-activerecord (2.0.26)
       activerecord (>= 4.1)
       sinatra (>= 1.0)
+    sinatra-cross_origin (0.4.0)
     sqlite3 (1.6.3-x86_64-linux)
     thin (1.8.2)
       daemons (~> 1.0, >= 1.0.9)
@@ -52,9 +55,11 @@ PLATFORMS
 
 DEPENDENCIES
   pry
+  rack-cors
   rake
   sinatra
   sinatra-activerecord
+  sinatra-cross_origin
   sqlite3
   thin
   yaml
