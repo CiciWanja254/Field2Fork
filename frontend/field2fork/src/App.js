@@ -40,7 +40,7 @@ function App() {
             />
           )}
           <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/profile/:id" element={<ProfilePage />} />
+          <Route path="/profile/:name/:id" element={<ProfilePage />} />
         </Routes>
       </Router>
     </div>

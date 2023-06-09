@@ -5,7 +5,7 @@ function About() {
         <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
           <div class="md:5/12 lg:w-5/12">
             <img
-              src="https://tailus.io/sources/blocks/left-image/preview/images/startup.png"
+              src="https://i.pinimg.com/564x/b4/1b/75/b41b75bf561ca6cfef7e1e940dd8adf8.jpg"
               alt="image"
               loading="lazy"
               width=""

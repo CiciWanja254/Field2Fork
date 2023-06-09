@@ -13,7 +13,6 @@ export default function ProductPage({ products }) {
   };
 
   // Filter the products based on the search query
-  // Filter the products based on the search query
   const filteredProducts = products.filter((product) => {
     const seller = JSON.parse(product.seller);
     const searchTerm = searchQuery.toLowerCase();

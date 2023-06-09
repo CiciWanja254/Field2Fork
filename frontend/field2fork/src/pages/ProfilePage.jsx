@@ -1,9 +1,55 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ProfileCard from "../components/ProfileCard";
+import { useParams } from "react-router-dom";
 
 function ProfilePage() {
+  const { name, id } = useParams();
+  const [products, setProducts] = useState([]);
+  const [reviews, setReviews] = useState([]);
+
+  // Use the extracted ID as needed
+  console.log("Page ID:", id);
+  console.log("Page NAME:", name);
+
+  useEffect(() => {
+    fetch("http://localhost:4567/products/farmer/1")
+      .then((response) => response.json())
+      .then((data) => setProducts(data))
+      .catch((error) => console.error("Failed to fetch products:", error));
+
+    fetch("http://localhost:4567/reviews")
+      .then((response) => response.json())
+      .then((data) => setReviews(data))
+      .catch((error) => console.error("Failed to fetch reviews:", error));
+  }, []);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("API_URL/products");
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error("Failed to fetch products:", error);
+      }
+    };
+
+    const fetchReviews = async () => {
+      try {
+        const response = await fetch("API_URL/reviews");
+        const data = await response.json();
+        setReviews(data);
+      } catch (error) {
+        console.error("Failed to fetch reviews:", error);
+      }
+    };
+
+    fetchProducts();
+    fetchReviews();
+  }, []);
+
   return (
     <div>
       <Header />
@@ -108,28 +154,42 @@ function WholesaleSourcing() {
 }
 
 function ReviewsSection() {
+  const [notifications, setNotifications] = useState([]);
+
+  // Simulating notifications for demonstration purposes
+  useEffect(() => {
+    const newNotification = {
+      user: "John Doe",
+      message: "New order received!",
+      timestamp: "June 1, 2023, 10:30 AM",
+    };
+    setNotifications([...notifications, newNotification]);
+  }, []);
+
   return (
     <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mt-8 mb-8">
       <h2 className="text-gray-900 dark:text-white text-2xl font-bold mb-4">
         Reviews
       </h2>
       <ul className="space-y-4">
-        <li className="flex items-start">
-          <img
-            className="w-10 h-10 rounded-full mr-4"
-            src="avatar1.jpg"
-            alt="Avatar 1"
-          />
-          <div>
-            <p className="font-bold">John Doe</p>
-            <p className="text-gray-600 dark:text-gray-400">
-              Excellent product! Highly recommended.
-            </p>
-            <p className="text-xs text-gray-500 dark:text-gray-400">
-              June 1, 2023, 10:30 AM
-            </p>
-          </div>
-        </li>
+        {notifications.map((notification, index) => (
+          <li key={index} className="flex items-start">
+            <img
+              className="w-10 h-10 rounded-full mr-4"
+              src="avatar1.jpg"
+              alt="Avatar 1"
+            />
+            <div>
+              <p className="font-bold">{notification.user}</p>
+              <p className="text-gray-600 dark:text-gray-400">
+                {notification.message}
+              </p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">
+                {notification.timestamp}
+              </p>
+            </div>
+          </li>
+        ))}
       </ul>
     </div>
   );
