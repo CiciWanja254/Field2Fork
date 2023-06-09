@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Cart from "./Cart";
 
 function Header() {
+  const [open, setOpen] = useState(false);
+
   return (
     <div>
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
@@ -17,6 +20,7 @@ function Header() {
             </span>
           </a>
           <div className="flex items-center">
+            <CartButton />
             <a
               href="tel:5541251234"
               className="mr-6 text-sm  text-gray-500 dark:text-white hover:underline"
@@ -63,7 +67,7 @@ function Header() {
               <li>
                 <Link
                   className="text-gray-900 dark:text-white hover:underline"
-                  to={`/profile`}
+                  to={`/profile/Farmer/1`}
                 >
                   Profile
                 </Link>
@@ -77,3 +81,20 @@ function Header() {
 }
 
 export default Header;
+
+function CartButton() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div>
+      <button
+        onClick={() => setOpen(!open)}
+        type="button"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        Cart (2)
+      </button>
+      {open && <Cart setOpen={setOpen} />}
+    </div>
+  );
+}

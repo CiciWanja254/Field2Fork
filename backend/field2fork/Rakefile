@@ -2,6 +2,8 @@ require 'sinatra/activerecord/rake'
 require_relative 'config/environment'
 require 'pry'
 
+require_relative './app/models/products'
+
 desc 'Starts the console'
 task :console do
 

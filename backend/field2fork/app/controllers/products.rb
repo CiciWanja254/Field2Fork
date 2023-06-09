@@ -23,16 +23,27 @@ class ProductController < Sinatra::Base
     products_json.to_json
   end
     
-  get '/products/seller/:seller_id' do |seller_id|
-    products = Product.where(seller_id: seller_id)
+  get '/products/:seller_type/:seller_id' do |seller_type, seller_id|
+    products = Product.where(seller_type: seller_type, seller_id: seller_id)
+    puts products
+
     if products.any?
-      products.map { |product| { id: product.id, name: product.name, user_id: product.user_id } }.to_json
+      products.map { |product| { 
+        id: product.id,
+        name: product.name,
+        description: product.description,
+        price: product.price,
+        seller_type: product.seller_type,
+        seller: product.seller.to_json,
+        availability: product.availability,
+        image: product.image
+      } }.to_json
     else
       status 404
-      { error: "No products found for seller with ID #{seller_id}" }.to_json
+      { error: "No products found for #{seller_type} with ID #{seller_id}" }.to_json
     end
   end
-
+  
   post '/products' do
     request_body = JSON.parse(request.body.read)
     product = Product.create(request_body)

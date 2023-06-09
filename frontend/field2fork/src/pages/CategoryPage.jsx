@@ -31,7 +31,6 @@ function CategoryPage({ categories }) {
           </div>
         </div>
       </div>
-
       <Footer />
     </div>
   );

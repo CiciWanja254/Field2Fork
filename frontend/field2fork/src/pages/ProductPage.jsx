@@ -44,7 +44,6 @@ export default function ProductPage({ products }) {
           />
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
