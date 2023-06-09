@@ -1,2 +1,11 @@
 require 'sinatra/activerecord/rake'
 require_relative 'config/environment'
+require 'pry'
+
+desc 'Starts the console'
+task :console do
+
+  # Start the console session
+  puts "Starting console..."
+  binding.pry
+end

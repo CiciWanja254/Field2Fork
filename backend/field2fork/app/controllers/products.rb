@@ -1,9 +1,36 @@
 require_relative '../models/products'
+require_relative '../models/wholesalers'
+require_relative '../models/farmers'
 
 class ProductController < Sinatra::Base
   get '/products' do
-    products = Product.all
-    products.map { |product| product.to_json }.to_json
+    products = Product.includes(:seller).all
+
+    # Convert products, farmers, and wholesalers to JSON
+    products_json = products.map do |product|
+      {
+        id: product.id,
+        name: product.name,
+        description: product.description,
+        price: product.price,
+        seller_type: product.seller_type,
+        seller: product.seller.to_json,
+        availability: product.availability,
+        image: product.image
+      }
+    end
+
+    products_json.to_json
+  end
+    
+  get '/products/seller/:seller_id' do |seller_id|
+    products = Product.where(seller_id: seller_id)
+    if products.any?
+      products.map { |product| { id: product.id, name: product.name, user_id: product.user_id } }.to_json
+    else
+      status 404
+      { error: "No products found for seller with ID #{seller_id}" }.to_json
+    end
   end
 
   post '/products' do
